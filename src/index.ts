@@ -18,7 +18,13 @@ import getConfig from './config';
 
 type Task = (browser: Browser, page: Page, _account: Account) => Promise<any>
 
-const taskList: Task[] = [autoSign, autoBugFix, autoLuckDraw, autoDigMine, autoMineCount];
+const taskList: Task[] = [
+    autoSign,
+    autoBugFix,
+    autoLuckDraw,
+    /*autoDigMine, */
+    autoMineCount
+];
 
 // const taskList: Task[] = [ autoDigMine];
 function getAccount(): Account[] {
