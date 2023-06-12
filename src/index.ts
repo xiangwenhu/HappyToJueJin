@@ -8,7 +8,7 @@ import { createPage } from "./util/puppeteer";
 
 // tasks
 import autoSign from "./tasks/autoSign"
-import autoBugFix from './tasks/autoBugFix';
+// import autoBugFix from './tasks/autoBugFix';
 import autoLuckDraw from './tasks/autoLuckDraw';
 import autoDigMine from './tasks/autoDigMine';
 import autoMineCount from "./tasks/autoMineCount";
@@ -20,7 +20,7 @@ type Task = (browser: Browser, page: Page, _account: Account) => Promise<any>
 
 const taskList: Task[] = [
     autoSign,
-    autoBugFix,
+    // autoBugFix,
     autoLuckDraw,
     /*autoDigMine, */
     autoMineCount
@@ -102,7 +102,7 @@ async function execAutoTask(account: Account, cookies: any) {
     let browser: Browser;
     try {
         let pInfo = await createPage({
-            headless: true,
+            headless: false,
             defaultViewport: { width: 1400, height: 1200 }
         });
         let page = pInfo.page;
