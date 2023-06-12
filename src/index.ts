@@ -102,7 +102,7 @@ async function execAutoTask(account: Account, cookies: any) {
     let browser: Browser;
     try {
         let pInfo = await createPage({
-            headless: false,
+            headless: true,
             defaultViewport: { width: 1400, height: 1200 }
         });
         let page = pInfo.page;
